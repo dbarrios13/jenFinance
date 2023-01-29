@@ -61,9 +61,11 @@ export default function AddBill() {
                     <MenuItem value='Home Expense'>Home Bills</MenuItem>
                     <MenuItem value='Car Expense'>Car Expense</MenuItem>
                     <MenuItem value='Food Expense'>Food Expense</MenuItem>
+                    <MenuItem value='Subscriptions'>Subscriptions</MenuItem>
+                    <MenuItem value='Other Expense'>Other Expense</MenuItem>
                 </Select>
             </FormControl>
-            <Button onClick={handleSubmit}>Add New Bill</Button>
+            <Button variant="contained" onClick={handleSubmit}>Add New Bill</Button>
         </Card>
     );
 }
