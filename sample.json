@@ -1,0 +1,21 @@
+{
+    "id": "",
+    "income": [
+        {
+            "name": "income name",
+            "amount": "10.00",
+            "date": "01/01/2023",
+            "frequent": 0
+        }
+    ],
+    "bills": [
+        {
+            "name": "bill name",
+            "amount": "10.00",
+            "date": "01/01/2023",
+            "endDate": "12/31/2023",
+            "category": 0,
+            "status": true
+        }
+    ]
+}

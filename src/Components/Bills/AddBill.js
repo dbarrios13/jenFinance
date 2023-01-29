@@ -6,8 +6,9 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import CategoryIcon from '@mui/icons-material/Category';
 
-export default function AddBill() {
+export default function AddBill({bills, setBills}) {
     const [bill, setBill] = useState({
+        id: bills.length.toString(),
         name: '',
         amount: '',
         date: '',
@@ -26,8 +27,14 @@ export default function AddBill() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(bill);
+
+        setBills([...bills, bill])
+        localStorage.setItem('bills', JSON.stringify([...bills, bill]))
+
+        let id = bills.length + 1;
+
         setBill({
+            id: id.toString(),
             name: '',
             amount: '',
             date: '',
@@ -58,11 +65,11 @@ export default function AddBill() {
             <FormControl variant='standard'>
                 <InputLabel id='standard-adorment-category'>Category</InputLabel>
                 <Select id="standard-adorment-category" name='category' value={bill.category} startAdornment={<InputAdornment position="start"><CategoryIcon fontSize='small' /></InputAdornment>} onChange={handleInputChange} >
-                    <MenuItem value='Home Expense'>Home Bills</MenuItem>
-                    <MenuItem value='Car Expense'>Car Expense</MenuItem>
-                    <MenuItem value='Food Expense'>Food Expense</MenuItem>
-                    <MenuItem value='Subscriptions'>Subscriptions</MenuItem>
-                    <MenuItem value='Other Expense'>Other Expense</MenuItem>
+                    <MenuItem value="1">Home Bills</MenuItem>
+                    <MenuItem value='2'>Car Expense</MenuItem>
+                    <MenuItem value='3'>Food Expense</MenuItem>
+                    <MenuItem value='4'>Subscriptions</MenuItem>
+                    <MenuItem value='0'>Other Expense</MenuItem>
                 </Select>
             </FormControl>
             <Button variant="contained" onClick={handleSubmit}>Add New Bill</Button>
