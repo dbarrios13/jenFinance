@@ -7,19 +7,19 @@ export default function ListBills({bills}) {
             <Table>
                 <TableHead>
                     <TableRow>
+                        <TableCell>Date</TableCell>
                         <TableCell>Bills</TableCell>
                         <TableCell>Amount</TableCell>
-                        <TableCell>Date</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {bills.map((bill, index) => (
+                    {/* {bills !== undefined ? bills.map((bill, index) => (
                         <TableRow key={index}>
+                            <TableCell>{bill.date}</TableCell>
                             <TableCell>{bill.name}</TableCell>
                             <TableCell>${bill.amount}</TableCell>
-                            <TableCell>{bill.date}</TableCell>
                         </TableRow>
-                    ))}
+                    )) : 'Add bills'} */}
                 </TableBody>
             </Table>
         </TableContainer>

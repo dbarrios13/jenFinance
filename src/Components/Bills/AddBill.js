@@ -6,9 +6,9 @@ import DescriptionIcon from '@mui/icons-material/Description';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import CategoryIcon from '@mui/icons-material/Category';
 
+
 export default function AddBill({bills, setBills}) {
     const [bill, setBill] = useState({
-        id: bills.length.toString(),
         name: '',
         amount: '',
         date: '',
@@ -29,12 +29,8 @@ export default function AddBill({bills, setBills}) {
         event.preventDefault();
 
         setBills([...bills, bill])
-        localStorage.setItem('bills', JSON.stringify([...bills, bill]))
-
-        let id = bills.length + 1;
 
         setBill({
-            id: id.toString(),
             name: '',
             amount: '',
             date: '',

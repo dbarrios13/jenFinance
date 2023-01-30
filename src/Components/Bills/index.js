@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 import AddBill from "./AddBill";
 import ListBills from "./ListBills";
+import { getBills } from "../../Data";
 
 export default function Bills() {
-    const [bills, setBills] = useState(JSON.parse(localStorage.getItem('bills')))
+    const [bills, setBills] = useState(getBills())
 
     useEffect(() => {
-
+        getBills()
     }, [bills])
 
     return (
