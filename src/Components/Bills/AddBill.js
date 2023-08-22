@@ -28,6 +28,7 @@ export default function AddBill({bills, setBills}) {
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        localStorage.setItem('bills', JSON.stringify([...bills, bill]))
         setBills([...bills, bill])
 
         setBill({

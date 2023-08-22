@@ -7,16 +7,19 @@ axios.defaults.headers.common['Content-Type'] = "application/json";
 axios.defaults.headers.common['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS, DELETE';
 axios.defaults.headers.common['Origin'] = 'http://localhost:3004';
 
-
+export const getAuth = () => {
+    axios.post('/')
+}
 
 export const getBills = () => {
-    axios.get(`/bills`)
-    .then(res => {
-        console.log(res)
-        return res.data;
-    })
-    .catch(err => {
-        console.log(err)
-        return err.response.data.message;
-    })
+    return localStorage.getItem('bills');
+//     axios.get(`/bills`)
+//     .then(res => {
+//         console.log(res)
+//         return res.data;
+//     })
+//     .catch(err => {
+//         console.log(err)
+//         return err.response.data.message;
+//     })
 }

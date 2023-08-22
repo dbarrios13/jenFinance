@@ -13,13 +13,13 @@ export default function ListBills({bills}) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {/* {bills !== undefined ? bills.map((bill, index) => (
+                    {bills !== undefined ? bills.map((bill, index) => (
                         <TableRow key={index}>
                             <TableCell>{bill.date}</TableCell>
                             <TableCell>{bill.name}</TableCell>
                             <TableCell>${bill.amount}</TableCell>
                         </TableRow>
-                    )) : 'Add bills'} */}
+                    )) : 'Add bills'}
                 </TableBody>
             </Table>
         </TableContainer>
